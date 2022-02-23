@@ -13,8 +13,16 @@ class Student(Person):
         self.fullname = firstname + " " + lastname
     def printNameSubject(self):
         print("%s %s" % (self.fullname, self.subject))
-
+class Teacher(Person):
+    def __init__(self,firstname,lastname,course):
+        super().__init__(firstname,lastname) #or Person.__init__(self,firstname,lastname)
+        self.course = course
+        self.fullname = firstname + " " + lastname
+    def printNameCourse(self):
+        print("%s %s" % (self.fullname, self.course))
 
 
 me = Student('Benedikt','Daurer','physics')
 me.printNameSubject()
+you = Teacher('Filip','Maia','Python')
+you.printNameCourse()
